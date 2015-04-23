@@ -1,10 +1,10 @@
 ## USAGE
 ## From your working directory...
-## > source("cachematrix.R")    load R program
-## > a <- makeCacheMatrix()     create functions
-## > a$set(matrix(1:4, 2, 2))   create matrix
-## > cacheSolve(a)              initial call returns inverted matrix and caches the matrix
-## > cacheSolve(a)              subsequent calls returns inverted matrix from cache
+## source("cachematrix.R")    load R program
+## a <- makeCacheMatrix()     create functions
+## a$set(matrix(1:4, 2, 2))   create matrix
+## cacheSolve(a)              initial call returns inverted matrix and caches the matrix
+## cacheSolve(a)              subsequent calls returns inverted matrix from cache
 
 
 ##makeCacheMatrix creates a special matrix object that can cache its inverse.
@@ -13,7 +13,7 @@ makeCacheMatrix <- function(x = matrix()) {
 	#--cache is used to store the cached value. initialize to NULL
         cache <- NULL
 
-    #--create the matrix in the working environment
+    #--create the matrix in the working environment "<<-"
         set <- function(y) {
                 x <<- y
                 cache <<- NULL
